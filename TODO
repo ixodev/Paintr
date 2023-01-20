@@ -1,0 +1,21 @@
+Paintr:
+    Interface Discord -> Bot:
+        [ ] Créer le bot
+        [ ] Commande /paint prompt
+    Bruiteur d'image:
+        [ ] Créer le serveur avec le port
+        [ ] Créer la fonction bruiteur
+        [ ] Mettre la fonction sur le serveur
+        //[ ] Optimiser ?
+    Générateur d'image:
+        [ ] Créer le serveur avec le port
+        [ ] Créer l'IA + l'entrainer
+        [ ] Créer la fonction générer
+        [ ] Mettre la fonction sur le serveur
+        // Optimiser ?
+    Upscaler d'image:
+        [ ] Créer le serveur avec le port
+        [ ] Créer l'IA + l'entrainer
+        [ ] Créer la fonction upscaler
+        [ ] Mettre la fonction sur le serveur
+        // Optimiser ?

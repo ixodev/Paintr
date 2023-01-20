@@ -1,0 +1,25 @@
+{
+  "name": "paintr",
+  "version": "1.0.0",
+  "description": "A Discord bot that draw something based on a prompt.",
+  "main": "index.js",
+  "displayName": "Paintr",
+  "author": "Kodeur_Kubik",
+  "license": "ISC",
+  "contributors": [
+    {
+      "name": "Grey Wolf"
+    }
+  ],
+  "categories": [
+    "Machine Learning"
+  ],
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.18",
+    "express": "^4.18.2",
+    "jimp": "^0.16.2"
+  },
+  "scripts": {
+    "start": "[ ! -d 'node_modules' ] && npm install; clear && node ."
+  }
+}

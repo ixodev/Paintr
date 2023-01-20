@@ -26,4 +26,4 @@ The lastest version of Paintr was released on January 2023.
 
 ## Final Note
 
-We hope you enjoy using Paintr and are excited to see the images it generates for you. If you have any issues or feedback, please feel free to reach out to us on the Discord server or through the contact information provided in the README.
+We hope you enjoy using Paintr and are excited to see the images it generates for you. If you have any issues or feedback, please feel free to reach out to us on our Discord server.

@@ -1,4 +1,4 @@
-# Paintr
+# Paintr - The AI that generates images
 
 Paintr is an AI that generates images based on a given prompt. It is written in JavaScript using the brain.js library. This project is a collaboration between GreyWolf-Dev and TotoroGaming.
 

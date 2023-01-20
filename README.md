@@ -4,8 +4,8 @@
 Written in JavaScript with brain.js.
 Copyright (c) GreyWolf-Dev and TotoroGaming.
 
-- This AI is on a Discord server : https://discord.com/channels/1065892301622222910/1065892302578532395
-- Use the command /paintr + your description of the image.
+- This AI is on a Discord server : https://discord.gg/3TyWqv5U6G
+- Use the command `/paint` + your description of the image to generate an image based on a prompt.
 - Enjoy!
 
 # January 2023

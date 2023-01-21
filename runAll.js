@@ -1,5 +1,6 @@
 const config = require('./config.js');
 const chalk = require('chalk');
+var readline = require("readline-sync");
 
 console.log("*********************************");
 console.log("*" + chalk.green("  ____       _       _         ") + "*");
@@ -15,6 +16,14 @@ require('./_BRUITEUR/server.js')();
 console.log("*" + chalk.blue(`  Bruiteur ready on port ${config.ports.bruiteur}  `) + "*");
 console.log("*********************************");
 
+var running = true;
+while(running) {
+    var cmd = readline.question("Enter a command: ");
+    switch(cmd) {
+        case "/exit": console.log("Bye!"); running = false; break;
+        case "/search": var image = readline.question("Please enter a description: "); /* ... */ break;
+    }
+}
 
 // Initialising the ??
 // console.log("*      Ready and launched!      *");

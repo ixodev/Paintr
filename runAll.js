@@ -15,6 +15,17 @@ require('./_BRUITEUR/server.js')();
 console.log("*" + chalk.blue(`  Bruiteur ready on port ${config.ports.bruiteur}  `) + "*");
 console.log("*********************************");
 
+// Initializing the BRUITEUR
+require('./_RESIZER/server.js')();
+console.log("*" + chalk.blue(`  Resizer ready on port ${config.ports.resizer}   `) + "*");
+console.log("*********************************");
+
 
 // Initialising the ??
 // console.log("*      Ready and launched!      *");
+
+
+
+// Catch errors to avoid crashing
+process.on('unhandledRejection', async (error) => { console.error(chalk.red(error)); });
+process.on('uncaughtException', async (error) => { console.error(chalk.red(error)); });

@@ -7,16 +7,19 @@
 * © GreyWolf-dev & KodeurKubik  *
 *********************************/
 
+const prefix = `${__dirname}/images` // '/Volumes/Paintr'
 
 module.exports = {
     paths: {
-        brut: __dirname + '/images/brut',
-        bruit: __dirname + '/images/bruit',
-        random: __dirname + '/images/random',
+        all: prefix + '/all',
+        bruiter: prefix + '/bruit',
+        fullBruit: prefix + '/random',
+        resizer: prefix + '/ready',
     },
     ports: {
         bruiteur: 9001,
-        generator: 9002,
-        upscaler: 9003,
+        resizer: 9002,
+        generator: 9003,
+        upscaler: 9004,
     }
 }

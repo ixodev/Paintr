@@ -21,6 +21,6 @@
     "jimp": "^0.16.2"
   },
   "scripts": {
-    "start": "[ ! -d 'node_modules' ] && npm install; clear && node ."
+    "start": "[ ! -d 'node_modules' ] && npm install; clear && node runAll.js"
   }
 }

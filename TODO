@@ -19,3 +19,7 @@ Paintr:
         [ ] Créer la fonction upscaler
         [ ] Mettre la fonction sur le serveur
         // Optimiser ?
+    Preparation des images:
+        [ ] Trouver des images
+        [ ] Les redimensionner
+        [ ] Ajouter une description

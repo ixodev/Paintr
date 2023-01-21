@@ -13,8 +13,8 @@ const config = require('../config.js');
 
 /**
  * @description Adds random pixels to the specified image to train the AI for example.
- * @param {String} image_ID
- * @param {Number} percent
+ * @param {String} image_ID The image ID that is in the config "brut" folder
+ * @param {Number} percent The percentage of random pixels to add
  * @returns Path to the generated image
  * 
  * @author GreyWolf-dev & KodeurKubik
@@ -22,11 +22,11 @@ const config = require('../config.js');
 module.exports.bruit = async function (image_ID, percent) {
     return new Promise((resolve) => {
         // Check if the file exists and if the percent is lower than 100
-        if (!fs.existsSync(`${config.paths.brut}/${image_ID}.png`)) throw new TypeError('The specified file does not exist!');
+        if (!fs.existsSync(`${config.paths.all}/${image_ID}.png`)) throw new TypeError('The specified file does not exist!');
         if (percent >= 100) throw new TypeError('The specified percentage is greater or equal to 100!');
 
         // Read the image and use it with jimp
-        Jimp.read(`${config.paths.brut}/${image_ID}.png`, async (err, image) => {
+        Jimp.read(`${config.paths.all}/${image_ID}.png`, async (err, image) => {
             // Calculate the number of pixels to replace and round it
             var nbPixels = Math.round((image.bitmap.width * image.bitmap.height) / 100 * percent);
 
@@ -48,8 +48,8 @@ module.exports.bruit = async function (image_ID, percent) {
             };
 
             // Save the image and set the prefix of the image name and return its path
-            image.writeAsync(`${config.paths.bruit}/${percent}P_${image_ID}.png`).then(() => {
-                return resolve(`${config.paths.bruit}/${percent}P_${image_ID}.png`);
+            image.writeAsync(`${config.paths.bruiter}/${percent}P_${image_ID}.png`).then(() => {
+                return resolve(`${config.paths.bruiter}/${percent}P_${image_ID}.png`);
             });
         })
     });
@@ -57,13 +57,16 @@ module.exports.bruit = async function (image_ID, percent) {
 
 /**
  * @description Create a fully random image with random pixels.
- * @returns Path to the PNG generated file
- * @param {String} image_ID
- * @param {Number} percent
+ * @returns Path to the PNG generated image
+ * @param {Number} width The width of the generated image
+ * @param {Number} height The height of the generated image
  * 
  * @author GreyWolf-dev & KodeurKubik
  */
 module.exports.fullBruit = async function (width, height) {
+    if (!width || isNaN(width)) throw new TypeError('Width was not specified or is not a number!');
+    if (!height || isNaN(height)) throw new TypeError('Height was not specified or is not a number!');
+
     return new Promise((resolve) => {
         // Create an image with the specified dimensions
         const image = new Jimp(width, height);
@@ -78,7 +81,7 @@ module.exports.fullBruit = async function (width, height) {
         };
 
         // Write the image and return its path
-        let filePath = `${config.paths.random}/${Date.now()}.png`;
+        let filePath = `${config.paths.fullBruit}/${Date.now()}.png`;
         image.writeAsync(filePath).then(() => {
             resolve(filePath);
         });

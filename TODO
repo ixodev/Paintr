@@ -1,12 +1,18 @@
 Paintr:
     Interface Discord -> Bot:
         [+] Créer le bot @done(23-01-20 20:44)
-        [ ] Commande /paint prompt
+        Commandes:
+            [ ] /paint prompt
+            [ ] /upscale image
     Bruiteur d'image:
         [+] Créer le serveur avec le port @done(23-01-20 20:44)
         [+] Créer la fonction bruiteur @done(23-01-20 20:45)
         [+] Mettre la fonction sur le serveur @done(23-01-20 20:45)
         //[ ] Optimiser ?
+    Resizer d'image:
+        [+] Créer le serveur avec le port @done(23-01-21 20:47)
+        [+] Créer la fonction resize @done(23-01-21 20:47)
+        [+] Mettre la fonction sur le serveur @done(23-01-21 20:47)
     Générateur d'image:
         [ ] Créer le serveur avec le port
         [ ] Créer l'IA + l'entrainer

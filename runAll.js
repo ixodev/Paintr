@@ -21,8 +21,12 @@ console.log("*" + chalk.blue(`  Resizer ready on port ${config.ports.resizer}   
 console.log("*********************************");
 
 
-// Initialising the ??
+// Initialising the --
 // console.log("*      Ready and launched!      *");
+
+
+// Running the bot
+require('./_DISCORD/index.js')();
 
 
 

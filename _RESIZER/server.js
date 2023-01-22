@@ -8,7 +8,7 @@
 *********************************/
 
 /**
- * @description Run a web server that use the resizer to resize images
+ * @description Run a web server that use the resizer to resize images. Put the type parameter to "upscale" to create the output in the upscaled directory
  * 
  * @author KodeurKubik
  */
@@ -28,13 +28,17 @@ module.exports = function () {
             width = req.query?.width,
             height = req.query?.height;
 
-        if (!image_ID || !fs.existsSync(`${config.paths.all}/${image_ID}.png`)) return res.status(400).send('File not specified or not found. (?image_ID=IMAGEID&width=WIDTH&height=HEIGHT)');
+        // Get the type of the resize (upscale...)
+        let type = req.query?.type
+
+        if (!image_ID || !fs.existsSync(`${config.paths.all}/${image_ID}.jpg`)) return res.status(400).send('File not specified or not found. (?image_ID=IMAGEID&width=WIDTH&height=HEIGHT)');
         if (!width) return res.status(400).send('Width of the image is not defined. (?image_ID=IMAGEID&width=WIDTH&height=HEIGHT)');
         if (!height) return res.status(400).send('Height of the image is not defined. (?image_ID=IMAGEID&width=WIDTH&height=HEIGHT)');
 
         // Edit and send the file
-        let filePath = await resize(image_ID, width, height);
-        res.sendFile(filePath);
+        let filePath = await resize(image_ID, width, height, (type == 'upscale') ? `${config.paths.upscaledImages}` : undefined);
+        //res.sendFile(filePath);
+        res.send(filePath);
     });
 
 

@@ -28,12 +28,13 @@ module.exports = function () {
         let image_ID = req.query?.image_ID,
             percent = req.query?.percent;
 
-        if (!image_ID || !fs.existsSync(`${config.paths.all}/${image_ID}.png`)) return res.status(400).send('File not specified or not found. (?image_ID=FILENAME&percent=PERCENTAGE)');
+        if (!image_ID || !fs.existsSync(`${config.paths.all}/${image_ID}.jpg`)) return res.status(400).send('File not specified or not found. (?image_ID=FILENAME&percent=PERCENTAGE)');
         if (!percent || percent >= 100) return res.status(400).send('Percentage not specified or greater or equal to 100. (?image_ID=FILENAME&percent=PERCENTAGE)');
 
         // Generate the image and send the file
         let filePath = await bruit(image_ID, percent);
-        res.sendFile(filePath);
+        //res.sendFile(filePath);
+        res.send(filePath);
     });
 
     // Listen to the /fullBruit page
@@ -46,7 +47,8 @@ module.exports = function () {
 
         // Generate and send the file
         let filePath = await fullBruit(width, height);
-        res.sendFile(filePath);
+        //res.sendFile(filePath);
+        res.send(filePath);
     });
 
 

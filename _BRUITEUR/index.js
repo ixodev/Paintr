@@ -22,11 +22,11 @@ const config = require('../config.js');
 module.exports.bruit = async function (image_ID, percent) {
     return new Promise((resolve) => {
         // Check if the file exists and if the percent is lower than 100
-        if (!fs.existsSync(`${config.paths.all}/${image_ID}.png`)) throw new TypeError('The specified file does not exist!');
+        if (!fs.existsSync(`${config.paths.all}/${image_ID}.jpg`)) throw new TypeError('The specified file does not exist!');
         if (percent >= 100) throw new TypeError('The specified percentage is greater or equal to 100!');
 
         // Read the image and use it with jimp
-        Jimp.read(`${config.paths.all}/${image_ID}.png`, async (err, image) => {
+        Jimp.read(`${config.paths.all}/${image_ID}.jpg`, async (err, image) => {
             // Calculate the number of pixels to replace and round it
             var nbPixels = Math.round((image.bitmap.width * image.bitmap.height) / 100 * percent);
 
@@ -48,8 +48,8 @@ module.exports.bruit = async function (image_ID, percent) {
             };
 
             // Save the image and set the prefix of the image name and return its path
-            image.writeAsync(`${config.paths.bruiter}/${percent}P_${image_ID}.png`).then(() => {
-                return resolve(`${config.paths.bruiter}/${percent}P_${image_ID}.png`);
+            image.writeAsync(`${config.paths.bruiter}/${percent}P_${image_ID}.jpg`).then(() => {
+                return resolve(`${config.paths.bruiter}/${percent}P_${image_ID}.jpg`);
             });
         })
     });
@@ -81,7 +81,7 @@ module.exports.fullBruit = async function (width, height) {
         };
 
         // Write the image and return its path
-        let filePath = `${config.paths.fullBruit}/${Date.now()}.png`;
+        let filePath = `${config.paths.fullBruit}/${Date.now()}.jpg`;
         image.writeAsync(filePath).then(() => {
             resolve(filePath);
         });

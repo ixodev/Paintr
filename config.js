@@ -7,6 +7,7 @@
 * © GreyWolf-dev & KodeurKubik  *
 *********************************/
 
+const chalk = require('chalk');
 const prefix = '/Volumes/KubikDisk/Paintr' // `${__dirname}/images`
 
 module.exports = {
@@ -32,4 +33,9 @@ module.exports = {
         client_secret: 'yWfFsC-2x8lMlAnZbpt7VzNiHIEyGsbJ',
         public_key: '79e7fe37125e4e1858bb8c3b7518100b824540886732f5b178ca2809f66ec7e1',
     },
+    log: {
+        success: (text) => console.log('[✅] ' + chalk.green(text)),
+        info: (text) => console.log('[⚠️] ' + chalk.yellow(text)),
+        error: (text) => console.log('[‼️] ' + chalk.red(text)),
+    }
 }

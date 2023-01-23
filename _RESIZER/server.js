@@ -28,15 +28,17 @@ module.exports = function () {
             width = req.query?.width,
             height = req.query?.height;
 
-        // Get the type of the resize (upscale...)
-        let type = req.query?.type
+        // Get the input directory of the resize
+        let input = req.query?.input || config.paths.all;
+        // Get the output directory of the resize
+        let output = req.query?.output || config.paths.resizer;
 
         if (!image_ID || !fs.existsSync(`${config.paths.all}/${image_ID}.jpg`)) return res.status(400).send('File not specified or not found. (?image_ID=IMAGEID&width=WIDTH&height=HEIGHT)');
         if (!width) return res.status(400).send('Width of the image is not defined. (?image_ID=IMAGEID&width=WIDTH&height=HEIGHT)');
         if (!height) return res.status(400).send('Height of the image is not defined. (?image_ID=IMAGEID&width=WIDTH&height=HEIGHT)');
 
         // Edit and send the file
-        let filePath = await resize(image_ID, width, height, (type == 'upscale') ? `${config.paths.upscaledImages}` : undefined);
+        let filePath = await resize(image_ID, width, height, input, output);
         //res.sendFile(filePath);
         res.send(filePath);
     });

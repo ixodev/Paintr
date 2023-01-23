@@ -20,10 +20,12 @@ const config = require('../config.js');
  * @author GreyWolf-dev & KodeurKubik
  */
 module.exports.bruit = async function (image_ID, percent) {
+    // Check that every parameter exists and is correct
+    if (!image_ID || !fs.existsSync(`${config.paths.bruiter}/${image_ID}.jpg`)) throw new TypeError('BRUIT: Image ID was not specified or does not exists.');
+    if (!percent || isNaN(percent) || percent >= 100) throw new TypeError('BRUIT: The percentage must be a number less than 100!');
+
     return new Promise((resolve) => {
-        // Check if the file exists and if the percent is lower than 100
-        if (!fs.existsSync(`${config.paths.all}/${image_ID}.jpg`)) throw new TypeError('The specified file does not exist!');
-        if (percent >= 100) throw new TypeError('The specified percentage is greater or equal to 100!');
+        config.log.info(`BRUIT: Bruiting existing image (${image_ID}) by ${percent}%`)
 
         // Read the image and use it with jimp
         Jimp.read(`${config.paths.all}/${image_ID}.jpg`, async (err, image) => {
@@ -64,8 +66,11 @@ module.exports.bruit = async function (image_ID, percent) {
  * @author GreyWolf-dev & KodeurKubik
  */
 module.exports.fullBruit = async function (width, height) {
-    if (!width || isNaN(width)) throw new TypeError('Width was not specified or is not a number!');
-    if (!height || isNaN(height)) throw new TypeError('Height was not specified or is not a number!');
+    // Check that every parameter exists and is correct
+    if (!width || isNaN(width)) throw new TypeError('FULLBRUIT: Width was not specified or is not a number!');
+    if (!height || isNaN(height)) throw new TypeError('FULLBRUIT: Height was not specified or is not a number!');
+
+    config.log.info(`FULLBRUIT: Generating ${width}x${height} Bruited image`)
 
     return new Promise((resolve) => {
         // Create an image with the specified dimensions

@@ -16,20 +16,23 @@ const config = require('../config.js');
  * @param {String} image_ID The image ID that is in the config "brut" folder
  * @param {Number} width The width of the generated image
  * @param {Number} height The height of the generated image
+ * @param {String} input The input directory of the generated image
  * @param {String} output The output directory of the generated image
  * @returns Path to the resized image
  * 
  * @author KodeurKubik
  */
-module.exports.resize = async function (image_ID, width, height, output) {
-    return new Promise((resolve) => {
-        // Check if the file exists
-        if (!fs.existsSync(`${config.paths.all}/${image_ID}.jpg`)) throw new TypeError('The specified file does not exist!');
-        if (!width || isNaN(width)) throw new TypeError('Width was not specified or is not a number!');
-        if (!height || isNaN(height)) throw new TypeError('Height was not specified or is not a number!');
+module.exports.resize = async function (image_ID, width, height, input, output) {
+    // Check that every parameter exists and is correct
+    if (!fs.existsSync(`${input}/${image_ID}.jpg`)) throw new TypeError('RESIZE: The specified file does not exist!');
+    if (!width || isNaN(width)) throw new TypeError('RESIZE: Width was not specified or is not a number!');
+    if (!height || isNaN(height)) throw new TypeError('RESIZE: Height was not specified or is not a number!');
 
+    config.log.info(`RESIZE: Resizing image ${image_ID} to ${width}x${height}`)
+
+    return new Promise((resolve) => {
         // Read the image and use it with jimp
-        Jimp.read(`${config.paths.all}/${image_ID}.jpg`, async (err, image) => {
+        Jimp.read(`${input}/${image_ID}.jpg`, async (err, image) => {
             if (err) throw new Error(err);
 
             // Resize it to the specified dimensions

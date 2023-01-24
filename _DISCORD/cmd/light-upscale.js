@@ -18,10 +18,10 @@ const config = require("../../config");
  * @author KodeurKubik
  */
 module.exports.slash = new SlashCommandBuilder()
-    .setName('upscale')
+    .setName('light-upscale')
     //.setNameLocalization('fr', 'upscale')
-    .setDescription('Upscale a bad image to make it increadible (x8)')
-    .setDescriptionLocalization('fr', 'Upscale une mauvaise image pour la rendre incroyable (x8)')
+    .setDescription('Upscale a bad image to make it better (x4)')
+    .setDescriptionLocalization('fr', 'Upscale une mauvaise image pour la rendre mieux (x4)')
     .setDMPermission(true)
     .setDefaultMemberPermissions(PermissionFlagsBits.SendMessages)
     .addAttachmentOption(opt =>
@@ -47,7 +47,7 @@ module.exports.run = async function (client, interaction) {
     // Get the image
     const file = interaction.options.getAttachment('file');
     if (file.contentType != 'image/jpg' && file.contentType != 'image/jpeg' && file.contentType != 'image/jpg' && file.contentType != 'image/png') return await interaction.editReply({ content: '❌ This image is not a JPG or a PNG file!' });
-    if (file.width > 200 || file.height > 200) return await interaction.editReply({ content: `❌ File too big to upscale! Max width and height are 100.\n> To upscale bigger images, use \`</light-upscale:${client.application.id}>\`.` })
+    if (file.width > 800 || file.height > 800) return await interaction.editReply({ content: `❌ File too big to upscale! Max width and height are 700.` })
 
     // Answer to the interaction with the asked prompt
     /*await interaction.editReply({
@@ -70,7 +70,7 @@ module.exports.run = async function (client, interaction) {
 
             // Edit the interaction
             await interaction.editReply({
-                content: `Upscaling image **5%** - <@${interaction.member.id}>`,
+                content: `Upscaling image **15%** - <@${interaction.member.id}>`,
                 embeds: [
                     new EmbedBuilder()
                         .setColor('NotQuiteBlack')
@@ -85,34 +85,17 @@ module.exports.run = async function (client, interaction) {
 
             // Edit the interaction
             await interaction.editReply({
-                content: `Upscaling image **45%** - <@${interaction.member.id}>`,
+                content: `Image light upscaled! - <@${interaction.member.id}>`,
                 embeds: [
                     new EmbedBuilder()
-                        .setColor('NotQuiteBlack')
-                        .setImage(`attachment://4x-${interaction.member.id}-${now}-${file.name}`)
-                ],
-                files: [new AttachmentBuilder(fs.readFileSync(upscaleOnce), { name: `4x-${interaction.member.id}-${now}-${file.name}` })]
-            });
-
-            // Create the upscaled version of the image
-            let upscaleTwice_RAW = await fetch(`http://localhost:${config.ports.upscaler}/upscale?input=${encodeURIComponent(file_prefix + '/x4/' + filename)}&output=${encodeURIComponent(file_prefix + '/x8/' + filename)}`);
-            let upscaleTwice = await upscaleTwice_RAW.text();
-
-            // Edit the interaction
-            await interaction.editReply({
-                content: `Image upscaled! - <@${interaction.member.id}>`,
-                embeds: [
-                    new EmbedBuilder()
-                        .setDescription('**Original**')
                         .setColor('DarkRed')
                         .setImage(file.url),
 
                     new EmbedBuilder()
-                        .setDescription('**Upscaled x8**')
-                        .setColor('DarkGreen')
-                        .setImage(`attachment://8x-${interaction.member.id}-${now}-${file.name}`)
+                        .setColor('DarkBlue')
+                        .setImage(`attachment://4x-${interaction.member.id}-${now}-${file.name}`)
                 ],
-                files: [new AttachmentBuilder(fs.readFileSync(upscaleTwice), { name: `8x-${interaction.member.id}-${now}-${file.name}` })]
+                files: [new AttachmentBuilder(fs.readFileSync(upscaleOnce), { name: `4x-${interaction.member.id}-${now}-${file.name}` })]
             });
         })
 }

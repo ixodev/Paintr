@@ -3,29 +3,31 @@ Paintr:
         [+] Créer le bot @done(23-01-20 20:44)
         Commandes:
             [ ] /paint prompt
-            [ ] /upscale image
-    Bruiteur d'image:
-        [+] Créer le serveur avec le port @done(23-01-20 20:44)
-        [+] Créer la fonction bruiteur @done(23-01-20 20:45)
-        [+] Mettre la fonction sur le serveur @done(23-01-20 20:45)
-        //[ ] Optimiser ?
-    Resizer d'image:
-        [+] Créer le serveur avec le port @done(23-01-21 20:47)
-        [+] Créer la fonction resize @done(23-01-21 20:47)
-        [+] Mettre la fonction sur le serveur @done(23-01-21 20:47)
+            [+] /upscale image @done(23-01-24 21:44)
     Générateur d'image:
         [ ] Créer le serveur avec le port
         [ ] Créer l'IA + l'entrainer
         [ ] Créer la fonction générer
         [ ] Mettre la fonction sur le serveur
         // Optimiser ?
+    Descripteur des images:
+        [ ] Créer le serveur avec le port
+        [ ] Créer l'IA + l'entrainer
+        [ ] Créer la fonction describe
+        [ ] Mettre la fonction sur le serveur
+    Preparation des images:
+        [+] Trouver des images @done(23-01-24 21:44)
+        [ ] Ajouter une description
+    Bruiteur d'image:
+        [+] Créer le serveur avec le port @done(23-01-20 20:44)
+        [+] Créer la fonction bruiteur @done(23-01-20 20:45)
+        [+] Mettre la fonction sur le serveur @done(23-01-20 20:45)
+    Resizer d'image:
+        [+] Créer le serveur avec le port @done(23-01-21 20:47)
+        [+] Créer la fonction resize @done(23-01-21 20:47)
+        [+] Mettre la fonction sur le serveur @done(23-01-21 20:47)
     Upscaler d'image:
         [+] Créer le serveur avec le port @done(23-01-24 19:53)
         [+] Créer l'IA + l'entrainer @done(23-01-24 19:53)
         [+] Créer la fonction upscaler @done(23-01-24 19:53)
-        [ ] Mettre la fonction sur le serveur
-        // Optimiser ?
-    Preparation des images:
-        [ ] Trouver des images
-        [ ] Les redimensionner
-        [ ] Ajouter une description
+        [+] Mettre la fonction sur le serveur @done(23-01-24 21:44)

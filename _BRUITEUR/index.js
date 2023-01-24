@@ -13,7 +13,7 @@ const config = require('../config.js');
 
 /**
  * @description Adds random pixels to the specified image to train the AI for example.
- * @param {String} image_ID The image ID that is in the config "brut" folder
+ * @param {String} image_ID The image ID that is in the config "all" folder
  * @param {Number} percent The percentage of random pixels to add
  * @returns Path to the generated image
  * 

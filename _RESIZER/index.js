@@ -13,7 +13,7 @@ const config = require('../config.js');
 
 /**
  * @description Change the size of an image to the specified width and height but with the same ratio
- * @param {String} image_ID The image ID that is in the config "brut" folder
+ * @param {String} image_ID The image ID that is in the config "all" folder
  * @param {Number} width The width of the generated image
  * @param {Number} height The height of the generated image
  * @param {String} input The input directory of the generated image

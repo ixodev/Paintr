@@ -16,6 +16,7 @@ module.exports = {
         bruiter: prefix + '/bruit',
         fullBruit: prefix + '/random',
         resizer: prefix + '/ready/images',
+        descripteur: prefix + '/describe',
 
         imageDescriptions: prefix + '/ready/descriptions',
         readyImages: prefix + '/ready/images',

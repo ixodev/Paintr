@@ -20,6 +20,7 @@ module.exports = {
         imageDescriptions: prefix + '/ready/descriptions',
         readyImages: prefix + '/ready/images',
         upscaledImages: prefix + '/ready/upImages',
+        discordUpscales: prefix + '/upscale'
     },
     ports: {
         bruiteur: 9001,

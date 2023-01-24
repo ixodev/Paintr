@@ -8,7 +8,7 @@
 *********************************/
 
 const fs = require('fs');
-const Jimp = require('jimp')
+const Jimp = require('jimp');
 const config = require('../config.js');
 
 /**

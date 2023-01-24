@@ -18,7 +18,6 @@ module.exports = function () {
     const client = new Client({ shards: 'auto', intents: Object.keys(IntentsBitField.Flags).filter(i => isNaN(i)) });
     const config = require('../config.js');
     const chalk = require('chalk');
-    const fetch = require('node-fetch');
 
 
     // When the bot receive an interaction
@@ -38,6 +37,7 @@ module.exports = function () {
 
             // If the interaction is to add a description to an image
             if (customid.startsWith('adddescr-')) {
+                return
                 // Reply to the interaction by showing a modal where the user can type
                 interaction.showModal(
                     new ModalBuilder()
@@ -65,6 +65,7 @@ module.exports = function () {
 
             // If the interaction is to add a description to an image
             if (customid.startsWith('adddescr-')) {
+                return
                 // Get the image setName
                 const name = customid.replace('adddescr-', '');
                 // Get the description gived by the user
@@ -116,9 +117,7 @@ module.exports = function () {
         console.log("*********************************");
 
         // Create all the commands that are in the /cmd/ folder
-        let commandList = [];
-        readdirSync(__dirname + `/cmd/`).filter(file => file.endsWith('.js')).forEach(file => commandList.push(require(`./cmd/${file}`).slash))
-        client.application.commands.set(commandList);
+        client.application.commands.set(readdirSync(__dirname + `/cmd/`).filter(file => file.endsWith('.js')).map(file => (require(`./cmd/${file}`).slash)));
     });
 
     // Log in

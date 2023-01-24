@@ -20,9 +20,9 @@ Paintr:
         [ ] Mettre la fonction sur le serveur
         // Optimiser ?
     Upscaler d'image:
-        [ ] Créer le serveur avec le port
-        [ ] Créer l'IA + l'entrainer
-        [ ] Créer la fonction upscaler
+        [+] Créer le serveur avec le port @done(23-01-24 19:53)
+        [+] Créer l'IA + l'entrainer @done(23-01-24 19:53)
+        [+] Créer la fonction upscaler @done(23-01-24 19:53)
         [ ] Mettre la fonction sur le serveur
         // Optimiser ?
     Preparation des images:

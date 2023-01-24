@@ -1,6 +1,5 @@
 const config = require('./config.js');
 const chalk = require('chalk');
-var readline = require("readline-sync");
 
 console.log("*********************************");
 console.log("*" + chalk.green("  ____       _       _         ") + "*");
@@ -16,9 +15,14 @@ require('./_BRUITEUR/server.js')();
 console.log("*" + chalk.blue(`  Bruiteur ready on port ${config.ports.bruiteur}  `) + "*");
 console.log("*********************************");
 
-// Initializing the BRUITEUR
+// Initializing the RESIZER
 require('./_RESIZER/server.js')();
 console.log("*" + chalk.blue(`  Resizer ready on port ${config.ports.resizer}   `) + "*");
+console.log("*********************************");
+
+// Initializing the UPSCALER
+require('./_UPSCALER/server.js')();
+console.log("*" + chalk.blue(`  Upscaler ready on port ${config.ports.upscaler}  `) + "*");
 console.log("*********************************");
 
 
@@ -28,8 +32,6 @@ console.log("*********************************");
 
 // Running the bot
 require('./_DISCORD/index.js')();
-
-
 
 // Catch errors to avoid crashing
 process.on('unhandledRejection', async (error) => { console.error(chalk.red(error)); });

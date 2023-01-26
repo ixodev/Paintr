@@ -1,9 +1,9 @@
 # Paintr - The AI that generates images
 <div align="center">
 
-<img alt="Paintr banner" src="github/banner.png" height=250>
+<img alt="Paintr banner" src="github/banner.png" width=100%>
 
-Paintr is an AI that generates images based on a given prompt. It is written in JavaScript using the brain.js library. This project is a collaboration between GreyWolf-Dev and TotoroGaming.
+Paintr is an AI that generates images based on a given prompt. It is written in JavaScript and a bit of python. This project is a collaboration between GreyWolf-Dev and TotoroGaming (aka Kubik).
 
 </div>
 
@@ -15,7 +15,7 @@ You can also upscale an existing image with the `/upscale` command. (for big ima
 
 ## Requirements
 
-To use Paintr, you will need to have a Discord account and be a member of the server linked above. Additionally, this AI is built on JavaScript and requires the brain.js library to run.
+To use Paintr, you will need to have a Discord account and be a member of the server linked above. Additionally, this AI is built on JavaScript and requires libraries to run (`npm i` to install every dependencies).
 
 ## Features
 

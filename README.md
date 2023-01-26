@@ -1,7 +1,11 @@
 # Paintr - The AI that generates images
-<img alt="Paintr logo" src="github/logo.png" width=250 height=250 style="display: block; margin: 0 auto;">
+<div align="center">
+
+<img alt="Paintr banner" src="github/banner.png" height=250>
 
 Paintr is an AI that generates images based on a given prompt. It is written in JavaScript using the brain.js library. This project is a collaboration between GreyWolf-Dev and TotoroGaming.
+
+</div>
 
 ## How to use
 

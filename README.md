@@ -3,7 +3,7 @@
 
 <img alt="Paintr banner" src="github/banner.png" width=100%>
 
-Paintr is an AI that generates images based on a given prompt. It is written in JavaScript and a bit of python. This project is a collaboration between GreyWolf-Dev and TotoroGaming (aka Kubik).
+Paintr is an AI that generates images based on a given prompt. It is written in JavaScript and a bit of python. This project is a collaboration between Ixodev and TotoroGaming (aka Kubik).
 
 </div>
 

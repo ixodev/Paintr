@@ -25,7 +25,7 @@ To use Paintr, you will need to have a Discord account and be a member of the se
 
 ## Copyright
 
-Paintr is Copyright (c) GreyWolf-Dev and TotoroGaming.
+Paintr is Copyright (c) ixodev and TotoroGaming.
 
 The https://github.com/mkabor/REAL-ESRGAN repositery was used for the upscaler with their pre-trained model.
 

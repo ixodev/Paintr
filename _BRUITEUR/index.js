@@ -4,7 +4,7 @@
 * | |_) / _` | | '_ \| __| '__| *
 * |  __/ (_| | | | | | |_| |    *
 * |_|   \__,_|_|_| |_|\__|_|    *
-* © GreyWolf-dev & KodeurKubik  *
+* © ixodev & KodeurKubik  *
 *********************************/
 
 const fs = require('fs');
@@ -17,7 +17,7 @@ const config = require('../config.js');
  * @param {Number} percent The percentage of random pixels to add
  * @returns Path to the generated image
  * 
- * @author GreyWolf-dev & KodeurKubik
+ * @author ixodev & KodeurKubik
  */
 module.exports.bruit = async function (image_ID, percent) {
     // Check that every parameter exists and is correct
@@ -63,7 +63,7 @@ module.exports.bruit = async function (image_ID, percent) {
  * @param {Number} width The width of the generated image
  * @param {Number} height The height of the generated image
  * 
- * @author GreyWolf-dev & KodeurKubik
+ * @author ixodev & KodeurKubik
  */
 module.exports.fullBruit = async function (width, height) {
     // Check that every parameter exists and is correct
